@@ -32,3 +32,27 @@ first(arr,2);
 var myColour=["Red", "Green","Blue", "Orange"];
 console.log(myColour.join("+"));
 
+//most-frequent
+var testArr= [1,5,6,6,6,6, "hey", 3,5,2,"hey","hello"];
+var freq={};
+function mostFreq(arr){
+    
+    for(const i of testArr){
+        if(freq[arr[i]]===undefined){
+            freq[arr[i]]=0;
+        }
+        freq[arr[i]]++;
+    }
+    var maxvalue=0;
+    var mostOcc;
+    for (const i in freq ){
+        if(freq[i]>maxvalue){
+            maxvalue= freq[i];
+            mostOcc=i;
+
+        }
+    }
+    return mostOcc;
+};
+
+console.log(mostFreq(testArr));
